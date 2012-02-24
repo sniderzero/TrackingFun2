@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:id="@+id/llHeader"
+            android:layout_width="fill_parent"
+            android:layout_height="90dp"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/blackbuttonpressed"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/txtName"
+                style="@style/detailheader"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:text="Large Text" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llbuttons"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llHeader" >
+
+            <Button
+                android:id="@+id/imgPrev"
+                style="@style/buttonText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:background="@drawable/startbuttonstates"
+                android:onClick="prevExercise"
+                android:paddingBottom="10dip"
+                android:paddingTop="10dip"
+                android:text="Prev" />
+
+            <Button
+                android:id="@+id/imgNext"
+                style="@style/buttonText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:background="@drawable/startbuttonstates"
+                android:onClick="nextExercise"
+                android:paddingBottom="10dip"
+                android:paddingTop="10dip"
+                android:text="Next" />
+
+            <Button
+                android:id="@+id/imgSave"
+                style="@style/buttonText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:background="@drawable/startbuttonstates"
+                android:onClick="clickSave"
+                android:paddingBottom="10dip"
+                android:paddingTop="10dip"
+                android:text="Save"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llStopwatch"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/llResults"
+            android:layout_below="@+id/llbuttons"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/timer"
+                style="@style/timerText"
+                android:layout_width="fill_parent"
+                android:text="@string/timer"
+                android:textColor="#030202" />
+
+            <LinearLayout
+                android:id="@+id/buttonArea"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/startButton"
+                    style="@style/buttonText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="50"
+                    android:onClick="startClick"
+                    android:text="@string/startText"
+                    android:background="@drawable/startbuttonstates"
+                    android:visibility="visible" />
+
+                <Button
+                    android:id="@+id/resetButton"
+                    style="@style/buttonText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="50"
+                    android:onClick="resetClick"
+                    android:text="@string/resetText"
+                    android:background="@drawable/startbuttonstates"
+                    android:visibility="visible" />
+
+                <Button
+                    android:id="@+id/stopButton"
+                    style="@style/buttonText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="50"
+                    android:onClick="stopClick"
+                    android:text="@string/stopText"
+                    android:background="@drawable/stopbuttonstates"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llSpinners"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/llResults"
+            android:layout_below="@+id/llbuttons"
+            android:layout_weight="50"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <LinearLayout
+                android:id="@+id/llReps"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/lblReps"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Reps"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#030202"
+                    android:textSize="20dip" />
+
+                <EditText
+                    android:id="@+id/eTxtReps"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llWeight"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/lblWeight"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Weight"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#030202"
+                    android:textSize="20dip" />
+
+                <EditText
+                    android:id="@+id/eTxtWeight"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:inputType="number" >
+
+                    <requestFocus />
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llAssist"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/lblAssist"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Pullup Assist"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#030202"
+                    android:textSize="20dip" />
+
+                <Spinner
+                    android:id="@+id/spnAssist"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llBand"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/lblBand"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Band"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#030202"
+                    android:textSize="20dip" />
+
+                <Spinner
+                    android:id="@+id/spnBand"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llResults"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btnHist"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/hline" />
+
+            <TextView
+                android:id="@+id/lblLastRound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Beat Your Last Results"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="26dip"
+                android:textColor="#030202"  />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/hline" />
+
+            <TableLayout
+                android:id="@+id/tableLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/txtReps"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="33"
+                        android:text="Reps"
+                        android:textSize="22dip"
+                        android:textColor="#030202"  />
+
+                    <TextView
+                        android:id="@+id/txtWeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="33"
+                        android:text="Weight"
+                        android:textSize="22dip"
+                        android:textColor="#030202"  />
+
+                    <TextView
+                        android:id="@+id/txtTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="33"
+                        android:text="Time"
+                        android:textSize="22dip"
+                        android:textColor="#030202"  />
+
+                    <TextView
+                        android:id="@+id/txtBand"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="33"
+                        android:text="Band"
+                        android:textSize="22dip"
+                        android:textColor="#030202"  />
+
+                    <TextView
+                        android:id="@+id/txtAssist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="33"
+                        android:text="Assist"
+                        android:textSize="22dip"
+                        android:textColor="#030202"  />
+
+                    <TextView
+                        android:id="@+id/txtDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="33"
+                        android:text="Date"
+                        android:textSize="22dip" 
+                        android:textColor="#030202" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/txtRepsValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="33"
+                        android:text="Reps"
+                        android:textSize="22dip" 
+                        android:textColor="#030202" />
+
+                    <TextView
+                        android:id="@+id/txtWeightValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="33"
+                        android:text="Weight"
+                        android:textSize="22dip" 
+                        android:textColor="#030202" />
+
+                    <TextView
+                        android:id="@+id/txtTimeValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="33"
+                        android:text="Time"
+                        android:textSize="22dip" 
+                        android:textColor="#030202" />
+
+                    <TextView
+                        android:id="@+id/txtBandValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="33"
+                        android:text="Band"
+                        android:textSize="22dip"
+                        android:textColor="#030202"  />
+
+                    <TextView
+                        android:id="@+id/txtAssistValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="33"
+                        android:text="Assist"
+                        android:textSize="22dip"
+                        android:textColor="#030202"  />
+
+                    <TextView
+                        android:id="@+id/txtDateValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="33"
+                        android:text="Date"
+                        android:textSize="22dip"
+                        android:textColor="#030202"  />
+                </TableRow>
+            </TableLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnHist"
+            style="@style/buttonText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:onClick="clickHistory"
+            android:text="Full History" 
+            android:background="@drawable/startbuttonstates"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

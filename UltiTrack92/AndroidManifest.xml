@@ -21,6 +21,10 @@
         <activity android:name="Phases"></activity>
         <activity android:name="WorkoutDays"></activity>
         <activity android:name="TimedWorkout"></activity>
+        <activity android:name="History"></activity>
+        <activity android:name="AppPreferences"></activity>
+        <activity android:name="Exercises"></activity>
+        <activity android:name="Details"></activity>
     </application>
 
 </manifest>

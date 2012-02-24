@@ -28,15 +28,15 @@ public class TimedWorkout extends Activity{
 	private long startTime;
 	private long elapsedTime;
 	private final int REFRESH_RATE = 100;
-	private String hours,minutes,seconds,dayName,content;
+	private String hours,minutes,seconds,dayName,content, strDate;
 	private long secs,mins,hrs;
 	private boolean stopped = false;
 	protected SQLiteDatabase db;
-	Cursor cursor_user;
+	Cursor curResults, curDay, curPhase;
 	Intent intent;
 	ListAdapter adapter;
 	Typeface font;
-	int dayID;
+	int dayID, intCompletes, intPhaseCompletes, dayNum, phaseID;
 	
 	
     @Override
@@ -75,14 +75,28 @@ public class TimedWorkout extends Activity{
     	btnSave.setTypeface(font);
     	//creating an intent to call when finished
     	intent = new Intent(TimedWorkout.this, UltiTrack92Activity.class);
-    	//grabbing passed variable
+    	//grabbing the DayName to display in the header
     	dayName = getIntent().getStringExtra("DAY_NAME");
+        dayNum = getIntent().getIntExtra("DAY_NUM", 0);
+        phaseID = getIntent().getIntExtra("PHASE_ID", 0);
+    	//grabbing the dayID 
     	dayID = getIntent().getIntExtra("DAY_ID",1);
     	//setting header value
     	textName.setText(dayName);
     	//opening db
     	db = (new DBHelper(this)).getWritableDatabase();
-    	cursor_user = db.rawQuery("SELECT _id, ExerciseName, date, time FROM results WHERE ExerciseName = " + "'" + textName.getText().toString() +"'", null);
+    	//grabbing exercise results
+    	curResults = db.rawQuery("SELECT _id, ExerciseName, date, time FROM results WHERE ExerciseName = " + "'" + dayName +"'", null);
+    	//grabbing the number of current completions
+    	curDay = db.rawQuery("SELECT _id, Completions FROM Days WHERE _id = " +  "'" + dayID + "'", null);
+    	curDay.moveToFirst();
+    	//grabbing the number of current completions for the phase
+    	curPhase = db.rawQuery("SELECT _id, PhaseID, Completions FROM Phases WHERE PhaseID = " +  "'" + phaseID + "'", null);
+    	curPhase.moveToFirst();
+    	//assigning completions to an int
+    	intPhaseCompletes = curPhase.getInt(2);
+    	//assigning completions to an int
+    	intCompletes = curDay.getInt(1);
     	// setting values for user stats
     	fillUserStats();
     	
@@ -119,11 +133,17 @@ public class TimedWorkout extends Activity{
     }
     //actions when clicking the save button
     public void saveAction (){
+	  	if(dayNum ==7){
+	  		intPhaseCompletes = intPhaseCompletes +1;
+	  		db.execSQL("UPDATE Phases SET Completions= "+ intCompletes + " WHERE PhaseID = " + "'" + phaseID + "'");
+	  	}
     	content = timerTextView.getText().toString();
-    	String strDate = functions.getDate();
-    	db.execSQL("INSERT INTO results (ExerciseName,time,date) VALUES("+ "'" + dayID +"'" + "," 
+    	strDate = functions.getDate();
+    	intCompletes = intCompletes +1;
+    	db.execSQL("INSERT INTO results (ExerciseName,time,date) VALUES("+ "'" + dayName +"'" + "," 
     			+ "'" + content + "'" + ","+ "'" + strDate +"'"+ ")");
-    	db.execSQL("UPDATE p90days SET date= "+ "'" + strDate + "'" + " WHERE _id = " + "'" + dayID + "'");
+    	db.execSQL("UPDATE Days SET LastDate= "+ "'" + strDate + "'" + " WHERE _id = " + "'" + dayID + "'");
+    	db.execSQL("UPDATE Days SET Completions= "+ intCompletes + " WHERE _id = " + "'" + dayID + "'");
     	db.close();
     	dialogShare();
     }
@@ -131,10 +151,10 @@ public class TimedWorkout extends Activity{
     
     public void saveClick (View view){
     	content = timerTextView.getText().toString();
-    	if(content.equals("00:00:00")){
+    	if(content.equals("00:00:00")){ //don't save if timer is at 0
     		Toast.makeText(this, "Exercise Not Saved, the timer is at 00:00:00", 50).show();
     	}
-    	else{
+    	else{ //otherwise do saveAction
     		saveAction();
     	}
     	
@@ -194,15 +214,15 @@ public class TimedWorkout extends Activity{
 	  public void fillUserStats(){
 		  	//changing the textviews to show the users last results
 		  			  	
-		  	if (cursor_user.getCount()==0){
+		  	if (curResults.getCount()==0){  // sets to 0 if there are no results
 		  		txtTime.setText("0");
 		  		txtDate.setText("0");
 
 		  	}
-		  	else{
-		  		cursor_user.moveToLast();
-		  		txtTime.setText(cursor_user.getString(3));
-		  		txtDate.setText(cursor_user.getString(2));
+		  	else{  //sets them to the users last result if there are results
+		  		curResults.moveToLast();
+		  		txtTime.setText(curResults.getString(3));
+		  		txtDate.setText(curResults.getString(2));
 		  	}
 		  }	
 	  /* This guy makes a dialog asking if the user wants to share their stats with their friends*/
@@ -210,7 +230,7 @@ public class TimedWorkout extends Activity{
 	    {
 	    	AlertDialog.Builder builder = new AlertDialog.Builder(this); 
 	    	builder
-	    	.setMessage("Congratulations! you just finished the " + dayID + " workout!! Do you want to tell your friends?")
+	    	.setMessage("Congratulations! you just finished the " + dayName + " workout!! Do you want to tell your friends?")
 	    	.setTitle("Share with your Friends?")
 	        .setCancelable(false)
 	        .setNegativeButton("Yes", new DialogInterface.OnClickListener() {
@@ -241,20 +261,20 @@ public class TimedWorkout extends Activity{
 	    	alert.show();
 	    }
 	    
-public void clickHistory(View v){
-	Intent intent = new Intent(TimedWorkout.this, Exercises.class);
-	intent.putExtra("EXERCISE_NAME", dayID);
+public void clickHistory(View v){  //brings up history view
+	Intent intent = new Intent(TimedWorkout.this, History.class);
+	intent.putExtra("EXERCISE_NAME", dayName);
 	intent.putExtra("EXERCISE_TYPE", 3);
 	startActivity(intent);
 }
 
-public void hideStopButton(){
+public void hideStopButton(){  //hides stop button
 	((Button)findViewById(R.id.stopButton)).setVisibility(View.GONE);
 	((Button)findViewById(R.id.startButton)).setVisibility(View.VISIBLE);
 	((Button)findViewById(R.id.resetButton)).setVisibility(View.VISIBLE);
 }
 
-public void showStopButton(){
+public void showStopButton(){ //shows stop button, hides start/reset buttons
 	((Button)findViewById(R.id.stopButton)).setVisibility(View.VISIBLE);
 	((Button)findViewById(R.id.startButton)).setVisibility(View.GONE);
 	((Button)findViewById(R.id.resetButton)).setVisibility(View.GONE);

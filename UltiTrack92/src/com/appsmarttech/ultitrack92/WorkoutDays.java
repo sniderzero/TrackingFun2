@@ -50,7 +50,7 @@ public class WorkoutDays extends Activity {
         phaseID = getIntent().getIntExtra("PHASE_ID", 1);
     	// query db based on phaseID
     	cursor = db.rawQuery("SELECT _id, DayNum, DayName, DayID, PhaseID, StrengthID, Type, HasRipper, LastDate, Completions " +
-    			"FROM Days WHERE PhaseID ="  + 1 , null);
+    			"FROM Days WHERE PhaseID ="  + phaseID , null);
 		lstDays.setAdapter(new adapter(this,cursor));
 
 		
@@ -67,18 +67,22 @@ public class WorkoutDays extends Activity {
 				{
 					//this is the action if it is a timed based workout
 					Intent intent = new Intent(WorkoutDays.this, TimedWorkout.class);
-					intent.putExtra("DAY_ID", cursor.getInt(3));
+					intent.putExtra("DAY_ID", cursor.getInt(0));
 					intent.putExtra("DAY_NAME", cursor.getString(2));
+					intent.putExtra("DAY_NUM", cursor.getInt(1));
+					intent.putExtra("PHASE_ID", cursor.getInt(4));
 					db.close();
 					startActivity(intent);
 				}
 				else { 
 					//this is the action if it is an exercise based workout
 					Intent intent = new Intent(WorkoutDays.this, Exercises.class);
-					intent.putExtra("REC_ID", cursor.getInt(0));
-					intent.putExtra("DAY_ID", cursor.getInt(3));
+					intent.putExtra("PHASE_ID", cursor.getInt(4));
 					intent.putExtra("HAS_RIPPER", cursor.getInt(7));
 					intent.putExtra("DAY_NAME", cursor.getString(2));
+					intent.putExtra("DAY_ID", cursor.getInt(3));
+					intent.putExtra("DAY_ID2", cursor.getInt(0));
+					intent.putExtra("DAY_NUM", cursor.getInt(1));
 					db.close();
 					startActivity(intent);
 				 	}

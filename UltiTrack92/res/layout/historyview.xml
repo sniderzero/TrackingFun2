@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background" >
+
+    <LinearLayout
+        android:id="@+id/llHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/blackbuttonpressed"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/lblHistory"
+            style="@style/buttonText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Large Text"
+            android:textColor="#030202" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llHeader"
+        android:src="@drawable/hline" />
+
+    <Button
+        android:id="@+id/btnDone"
+        style="@style/buttonText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/startbuttonstates"
+        android:onClick="clickClose"
+        android:text="Done" />
+
+    <ListView
+        android:id="@+id/lstHistory"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/btnDone"
+        android:layout_below="@+id/llLabels"
+        android:divider="@drawable/hline"
+        android:cacheColorHint="#00000000" >
+
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/llLabels"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView1" >
+
+        <TextView
+            android:id="@+id/lblTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Time"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#030202" />
+
+        <TextView
+            android:id="@+id/lblReps"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Reps"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#030202"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/lblWeight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Weight"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#030202"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/lblBand"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Band"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#030202"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/lblAssist"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Assist"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#030202"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/lblDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.25"
+            android:text="Date"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#030202" />
+
+    </LinearLayout>
+
+</RelativeLayout>
