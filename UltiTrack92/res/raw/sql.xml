@@ -1,0 +1,302 @@
+<sql>
+<statement>
+CREATE TABLE IF NOT EXISTS Exercises (
+	_id INTEGER PRIMARY KEY AUTOINCREMENT, 
+	DayName VARCHAR(50),
+	DayID INTERGER, 
+	ExerName VARCHAR(50), 
+	Type INTERGER)
+</statement>
+<statement>
+CREATE TABLE IF NOT EXISTS Days (
+	_id INTEGER PRIMARY KEY AUTOINCREMENT, 
+	DayNum INTERGER,
+	DayName VARCHAR(50),
+	DayID INTERGER, 
+	Type INTERGER,
+	PhaseID INTERGER,
+	StrengthID INTERGER, 
+	HasRipper INTERGER,
+	LastDate VARCHAR(50),
+	Completions INTERGER)
+</statement>
+<statement>
+CREATE TABLE IF NOT EXISTS Phases (
+	_id INTEGER PRIMARY KEY AUTOINCREMENT, 
+	Name VARCHAR(50),
+	Weeks VARCHAR(50),
+	PhaseID INTERGER,
+	Completions INTERGER)
+</statement>
+<statement>
+CREATE TABLE IF NOT EXISTS Strength (
+	_id INTEGER PRIMARY KEY AUTOINCREMENT,
+	dayID INTEGER,
+	Name VARCHAR(50),
+	Weeks VARCHAR(50),
+	StrengthID INTEGER,
+	Type INTEGER
+	Completions INTEGER)
+</statement>
+<statement>
+CREATE TABLE IF NOT EXISTS Results (
+	_id INTEGER PRIMARY KEY AUTOINCREMENT, 
+	profile VARCHAR(50),
+	ExerciseName VARCHAR(50),
+	weight INTERGER,
+	reps INTERGER,
+	band VARCHAR(50),
+	time VARCHAR(50),
+	assist VARCHAR(50),
+	date VARCHAR(50),
+	notes VARCHAR(100))
+</statement>
+<statement>
+CREATE TABLE IF NOT EXISTS Weighin (
+	_id INTEGER PRIMARY KEY AUTOINCREMENT, 
+	profile VARCHAR(50),
+	weight INTERGER,
+	date VARCHAR(50))
+</statement>
+<statement>INSERT INTO Days VALUES(1,1,'X2 Core',1,2,1,0,0,"",0)</statement>
+<statement>INSERT INTO Days VALUES(2,2,'Plyocide',2,1,1,0,0,"",0)</statement>
+<statement>INSERT INTO Days VALUES(3,3,'Rest or Recovery',3,1,1,0,0,"",0)</statement>
+<statement>INSERT INTO Days VALUES(4,4,'X2 Total Body + Ab',4,2,1,0,1,"",0)</statement>
+<statement>INSERT INTO Days VALUES(5,5,'Yoga',5,1,1,0,0,"",0)</statement>
+<statement>INSERT INTO Days VALUES(6,6,'Balance + Power',6,2,1,0,0,"",0)</statement>
+<statement>INSERT INTO Days VALUES(7,7,'Rest or Recovery',3,1,1,0,0,"",0)</statement>
+<statement>INSERT INTO Days VALUES(8,1,'Rest or Recovery',3,1,2,0,0,"",0)</statement>
+<statement>INSERT INTO Days VALUES(9,2,'Yoga',5,1,2,0,0,"",0)</statement>
+<statement>INSERT INTO Days VALUES(10,3,'Rest or Recovery',3,1,2,0,0,"",0)</statement>
+<statement>INSERT INTO Days VALUES(11,4,'Yoga',5,1,2,0,0,"",0)</statement>
+<statement>INSERT INTO Days VALUES(12,5,'Rest or Recovery',3,1,2,0,0,"",0)</statement>
+<statement>INSERT INTO Days VALUES(13,6,'Yoga',5,1,2,0,0,"",0)</statement>
+<statement>INSERT INTO Days VALUES(14,7,'Rest or Recovery',3,1,2,0,0,"",0)</statement>
+<statement>INSERT INTO Days VALUES(15,1,'Chest and Back + Ab',7,2,3,1,1,"",0)</statement>
+<statement>INSERT INTO Days VALUES(16,2,'Plyocide',2,1,3,1,0,"",0)</statement>
+<statement>INSERT INTO Days VALUES(17,3,'Rest or Recovery',3,1,3,1,0,"",0)</statement>
+<statement>INSERT INTO Days VALUES(18,4,'Shoulders and Arms + Ab',8,2,3,1,1,"",0)</statement>
+<statement>INSERT INTO Days VALUES(19,5,'Yoga',5,1,3,1,0,"",0)</statement>
+<statement>INSERT INTO Days VALUES(20,6,'Base and Back + Ab',9,2,3,1,1,"",0)</statement>
+<statement>INSERT INTO Days VALUES(21,7,'Rest or Recovery',3,1,3,1,0,"",0)</statement>
+<statement>INSERT INTO Days VALUES(22,1,'V Sculpt + Ab',10,2,3,2,1,"",0)</statement>
+<statement>INSERT INTO Days VALUES(23,2,'Plyocide',2,1,3,2,0,"",0)</statement>
+<statement>INSERT INTO Days VALUES(24,3,'Rest or Recovery',3,1,3,2,0,"",0)</statement>
+<statement>INSERT INTO Days VALUES(25,4,'X2 Chest, Shoulders and Tris + Ab',11,2,3,2,1,"",0)</statement>
+<statement>INSERT INTO Days VALUES(26,5,'Yoga',5,1,3,2,0,"",0)</statement>
+<statement>INSERT INTO Days VALUES(27,6,'Base and Back + Ab',9,2,3,2,1,"",0)</statement>
+<statement>INSERT INTO Days VALUES(28,7,'Rest or Recovery',3,1,3,2,0,"",0)</statement>
+<statement>INSERT INTO Days VALUES(29,1,'PAP Lower',12,1,4,0,0,"",0)</statement>
+<statement>INSERT INTO Days VALUES(30,2,'PAP Upper',13,1,4,0,0,"",0)</statement>
+<statement>INSERT INTO Days VALUES(31,3,'Yoga',5,1,4,0,0,"",0)</statement>
+<statement>INSERT INTO Days VALUES(32,4,'Rest or Recovery',3,1,4,0,0,"",0)</statement>
+<statement>INSERT INTO Days VALUES(33,5,'PAP Lower',12,1,4,0,0,"",0)</statement>
+<statement>INSERT INTO Days VALUES(34,6,'PAP Upper',13,1,4,0,0,"",0)</statement>
+<statement>INSERT INTO Days VALUES(35,7,'Rest or Recovery',3,1,4,0,0,"",0)</statement>
+<statement>INSERT INTO Exercises VALUES(1,'X2 Core',1,'Sphinx Plank Crunch',1)</statement>
+<statement>INSERT INTO Exercises VALUES(2,'X2 Core',1,'Warrior 3 Cross Crunch Right',1)</statement>
+<statement>INSERT INTO Exercises VALUES(3,'X2 Core',1,'Warrior 3 Cross Crunch Left',1)</statement>
+<statement>INSERT INTO Exercises VALUES(4,'X2 Core',1,'Single Leg Walk Out to Sphinx Right',1)</statement>
+<statement>INSERT INTO Exercises VALUES(5,'X2 Core',1,'Single Leg Walk Out to Sphinx Left',1)</statement>
+<statement>INSERT INTO Exercises VALUES(6,'X2 Core',1,'Half Angel Right',1)</statement>
+<statement>INSERT INTO Exercises VALUES(7,'X2 Core',1,'Half Angel Left',1)</statement>
+<statement>INSERT INTO Exercises VALUES(8,'X2 Core',1,'Roller Boat',1)</statement>
+<statement>INSERT INTO Exercises VALUES(9,'X2 Core',1,'3 Speed Med Ball Push-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(10,'X2 Core',1,'One Leg Lateral Leap Squat     ',1)</statement>
+<statement>INSERT INTO Exercises VALUES(11,'X2 Core',1,'Core Circle Right',3)</statement>
+<statement>INSERT INTO Exercises VALUES(12,'X2 Core',1,'Core Circle Left',3)</statement>
+<statement>INSERT INTO Exercises VALUES(13,'X2 Core',1,'Holmsen Screamer Lunge Right',1)</statement>
+<statement>INSERT INTO Exercises VALUES(14,'X2 Core',1,'Holmsen Screamer Lunge Left',1)</statement>
+<statement>INSERT INTO Exercises VALUES(15,'X2 Core',1,'Med Ball Dreya Roll',2)</statement>
+<statement>INSERT INTO Exercises VALUES(16,'X2 Core',1,'Plank Burpee on Stability Ball Right',1)</statement>
+<statement>INSERT INTO Exercises VALUES(17,'X2 Core',1,'Plank Burpee on Stability Ball Left',1)</statement>
+<statement>INSERT INTO Exercises VALUES(18,'X2 Core',1,'Banana Ball Switch Crunch',1)</statement>
+<statement>INSERT INTO Exercises VALUES(19,'X2 Core',1,'3-Point Squat Press with Med Ball',1)</statement>
+<statement>INSERT INTO Exercises VALUES(20,'X2 Core',1,'Slo-Mo Balance Climber',1)</statement>
+<statement>INSERT INTO Exercises VALUES(21,'X2 Core',1,'X2 Diver',1)</statement>
+<statement>INSERT INTO Exercises VALUES(22,'X2 Core',1,'Ryan Sphinx Twist Crunch Right',1)</statement>
+<statement>INSERT INTO Exercises VALUES(23,'X2 Core',1,'Ryan Sphinx Twist Crunch Left',1)</statement>
+<statement>INSERT INTO Exercises VALUES(24,'X2 Core',1,'One Leg Med Ball Burpee',1)</statement>
+<statement>INSERT INTO Exercises VALUES(25,'X2 Total Body',4,'1-Arm Chest Press Right',2)</statement>
+<statement>INSERT INTO Exercises VALUES(26,'X2 Total Body',4,'1-Arm Chest Press Left',2)</statement>
+<statement>INSERT INTO Exercises VALUES(27,'X2 Total Body',4,'4-Position Pull-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(28,'X2 Total Body',4,'Push-Up Side Arm Balance',1)</statement>
+<statement>INSERT INTO Exercises VALUES(29,'X2 Total Body',4,'Switch Lunge Press Right',2)</statement>
+<statement>INSERT INTO Exercises VALUES(30,'X2 Total Body',4,'Switch Lunge Press Left',2)</statement>
+<statement>INSERT INTO Exercises VALUES(31,'X2 Total Body',4,'Warrior 3 Kickback Right',2)</statement>
+<statement>INSERT INTO Exercises VALUES(32,'X2 Total Body',4,'Warrior 3 Kickback Left',2)</statement>
+<statement>INSERT INTO Exercises VALUES(33,'X2 Total Body',4,'Warrior 3 Curl Right',2)</statement>
+<statement>INSERT INTO Exercises VALUES(34,'X2 Total Body',4,'Warrior 3 Curl Left',2)</statement>
+<statement>INSERT INTO Exercises VALUES(35,'X2 Total Body',4,'Boing Push-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(36,'X2 Total Body',4,'Crunchy Lever Pull-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(37,'X2 Total Body',4,'Mule Kick Burpee',1)</statement>
+<statement>INSERT INTO Exercises VALUES(38,'X2 Total Body',4,'Swimmers Curl Press in Half Chair',2)</statement>
+<statement>INSERT INTO Exercises VALUES(39,'X2 Total Body',4,'Balance Kickback on Stability Ball Right',2)</statement>
+<statement>INSERT INTO Exercises VALUES(40,'X2 Total Body',4,'Balance Kickback on Stability Ball Left',2)</statement>
+<statement>INSERT INTO Exercises VALUES(41,'X2 Total Body',4,'Rocket Launcher Preacher Curl',2)</statement>
+<statement>INSERT INTO Exercises VALUES(42,'X2 Total Body',4,'1-Arm Chest Press Right',2)</statement>
+<statement>INSERT INTO Exercises VALUES(43,'X2 Total Body',4,'1-Arm Chest Press Left',2)</statement>
+<statement>INSERT INTO Exercises VALUES(44,'X2 Total Body',4,'4-Position Pull-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(45,'X2 Total Body',4,'Push-Up Side Arm Balance',1)</statement>
+<statement>INSERT INTO Exercises VALUES(46,'X2 Total Body',4,'Switch Lunge Press Right',2)</statement>
+<statement>INSERT INTO Exercises VALUES(47,'X2 Total Body',4,'Switch Lunge Press Left',2)</statement>
+<statement>INSERT INTO Exercises VALUES(48,'X2 Total Body',4,'Warrior 3 Kickback Right',2)</statement>
+<statement>INSERT INTO Exercises VALUES(49,'X2 Total Body',4,'Warrior 3 Kickback Left',2)</statement>
+<statement>INSERT INTO Exercises VALUES(50,'X2 Total Body',4,'Warrior 3 Curl Right',2)</statement>
+<statement>INSERT INTO Exercises VALUES(51,'X2 Total Body',4,'Warrior 3 Curl Left',2)</statement>
+<statement>INSERT INTO Exercises VALUES(52,'X2 Total Body',4,'Boing Push-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(53,'X2 Total Body',4,'Crunchy Lever Pull-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(54,'X2 Total Body',4,'Mule Kick Burpee',1)</statement>
+<statement>INSERT INTO Exercises VALUES(55,'X2 Total Body',4,'Swimmer?s Curl Press in ? Chair',2)</statement>
+<statement>INSERT INTO Exercises VALUES(56,'X2 Total Body',4,'Balance Kickback on Stability Ball Right',2)</statement>
+<statement>INSERT INTO Exercises VALUES(57,'X2 Total Body',4,'Balance Kickback on Stability Ball Left',2)</statement>
+<statement>INSERT INTO Exercises VALUES(58,'X2 Total Body',4,'Rocket Launcher Preacher Curl',2)</statement>
+<statement>INSERT INTO Exercises VALUES(59,'X2 Balance/Power',6,'Sphinx to Plank Plyo Bounce',1)</statement>
+<statement>INSERT INTO Exercises VALUES(60,'X2 Balance/Power',6,'1-Leg Plyo Squat Reach',1)</statement>
+<statement>INSERT INTO Exercises VALUES(61,'X2 Balance/Power',6,'Russian Twist',1)</statement>
+<statement>INSERT INTO Exercises VALUES(62,'X2 Balance/Power',6,'Sphinx to Plank Roll Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(63,'X2 Balance/Power',6,'4-Direction 1-Leg Squat Hop Right',2)</statement>
+<statement>INSERT INTO Exercises VALUES(64,'X2 Balance/Power',6,'4-Direction 1-Leg Squat Hop Left',2)</statement>
+<statement>INSERT INTO Exercises VALUES(65,'X2 Balance/Power',6,'Forearm Alt Side Plank Right',2)</statement>
+<statement>INSERT INTO Exercises VALUES(66,'X2 Balance/Power',6,'Forearm Alt Side Plank Left',2)</statement>
+<statement>INSERT INTO Exercises VALUES(67,'X2 Balance/Power',6,'Decline Sphinx Plank Press',1)</statement>
+<statement>INSERT INTO Exercises VALUES(68,'X2 Balance/Power',6,'Weighted Katherine',1)</statement>
+<statement>INSERT INTO Exercises VALUES(69,'X2 Balance/Power',6,'Plank X Crunch',1)</statement>
+<statement>INSERT INTO Exercises VALUES(70,'X2 Balance/Power',6,'Renegade Row ? Lolasana',2)</statement>
+<statement>INSERT INTO Exercises VALUES(71,'X2 Balance/Power',6,'Glute Bridge Roll Out',1)</statement>
+<statement>INSERT INTO Exercises VALUES(72,'X2 Balance/Power',6,'Over/Under Boat',1)</statement>
+<statement>INSERT INTO Exercises VALUES(73,'X2 Balance/Power',6,'Warrior Row Press Right',2)</statement>
+<statement>INSERT INTO Exercises VALUES(74,'X2 Balance/Power',6,'Warrior Row Press Left',2)</statement>
+<statement>INSERT INTO Exercises VALUES(75,'X2 Balance/Power',6,'Split Lunge Right',2)</statement>
+<statement>INSERT INTO Exercises VALUES(76,'X2 Balance/Power',6,'Split Lunge Left',2)</statement>
+<statement>INSERT INTO Exercises VALUES(77,'X2 Balance/Power',6,'Crawly Crab Press Right',2)</statement>
+<statement>INSERT INTO Exercises VALUES(78,'X2 Balance/Power',6,'Crawly Crab Press Left',2)</statement>
+<statement>INSERT INTO Exercises VALUES(79,'X2 Balance/Power',6,'Lateral Plyo Push-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(80,'X2 Balance/Power',6,'Lunge Kneel Knee Raise Right',2)</statement>
+<statement>INSERT INTO Exercises VALUES(81,'X2 Balance/Power',6,'Lunge Kneel Knee Raise Left',2)</statement>
+<statement>INSERT INTO Exercises VALUES(82,'X2 Balance/Power',6,'X Plank Spider Twist',1)</statement>
+<statement>INSERT INTO Exercises VALUES(83,'X2 Balance/Power',6,'Dumbbell Row to Side Plank Right',2)</statement>
+<statement>INSERT INTO Exercises VALUES(84,'X2 Balance/Power',6,'Dumbbell Row to Side Plank Left',2)</statement>
+<statement>INSERT INTO Exercises VALUES(85,'X2 Balance/Power',6,'Dumbbell Super Burpee Right',2)</statement>
+<statement>INSERT INTO Exercises VALUES(86,'X2 Balance/Power',6,'Dumbbell Super Burpee Left',2)</statement>
+<statement>INSERT INTO Exercises VALUES(87,'X2 Balance/Power',6,'Plank Ball Crunch',1)</statement>
+<statement>INSERT INTO Exercises VALUES(88,'Chest/Back/Balance',7,'Pull-Up X',4)</statement>
+<statement>INSERT INTO Exercises VALUES(89,'Chest/Back/Balance',7,'Plyo Stability Ball Push-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(90,'Chest/Back/Balance',7,'Core Crunch Chin-Up',4)</statement>
+<statement>INSERT INTO Exercises VALUES(91,'Chest/Back/Balance',7,'Push-Up Side Arm Balance',1)</statement>
+<statement>INSERT INTO Exercises VALUES(92,'Chest/Back/Balance',7,'Lever',1)</statement>
+<statement>INSERT INTO Exercises VALUES(93,'Chest/Back/Balance',7,'4-Ball Push-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(94,'Chest/Back/Balance',7,'Chin Pull Chin-Up',4)</statement>
+<statement>INSERT INTO Exercises VALUES(95,'Chest/Back/Balance',7,'Chin Pull Pull-Up',4)</statement>
+<statement>INSERT INTO Exercises VALUES(96,'Chest/Back/Balance',7,'The Impossible/Possible',1)</statement>
+<statement>INSERT INTO Exercises VALUES(97,'Chest/Back/Balance',7,'?L? Pull-Up',4)</statement>
+<statement>INSERT INTO Exercises VALUES(98,'Chest/Back/Balance',7,'3-Ball Plyo Push-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(99,'Chest/Back/Balance',7,'Vaulter Pull-Up',4)</statement>
+<statement>INSERT INTO Exercises VALUES(100,'Chest/Back/Balance',7,'Elevated Stability Ball Push-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(101,'Chest/Back/Balance',7,'In and Out',4)</statement>
+<statement>INSERT INTO Exercises VALUES(102,'Chest/Back/Balance',7,'Swimmer?s Push-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(103,'Chest/Back/Balance',7,'4-Grip Pull-Up Wide',4)</statement>
+<statement>INSERT INTO Exercises VALUES(104,'Chest/Back/Balance',7,'4-Grip Pull-Up Palm to Palm',4)</statement>
+<statement>INSERT INTO Exercises VALUES(105,'Chest/Back/Balance',7,'4-Grip Pull-Up Overhand Close',4)</statement>
+<statement>INSERT INTO Exercises VALUES(106,'Chest/Back/Balance',7,'4-Grip Pull-Up Chin Up',4)</statement>
+<statement>INSERT INTO Exercises VALUES(107,'Chest/Back/Balance',7,'Double Wide Push-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(108,'Chest/Back/Balance',7,'Double Wide Pull-Up',4)</statement>
+<statement>INSERT INTO Exercises VALUES(109,'Chest/Back/Balance',7,'Chattarocker',1)</statement>
+<statement>INSERT INTO Exercises VALUES(110,'Chest/Back/Balance',7,'Towel Pull-Up',4)</statement>
+<statement>INSERT INTO Exercises VALUES(111,'Chest/Back/Balance',7,'Med Ball Plyo Push-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(112,'X2 Shoulders/Arms',8,'Balance Curl',2)</statement>
+<statement>INSERT INTO Exercises VALUES(113,'X2 Shoulders/Arms',8,'Arnold Press',2)</statement>
+<statement>INSERT INTO Exercises VALUES(114,'X2 Shoulders/Arms',8,'Overhead Tricep Pull',2)</statement>
+<statement>INSERT INTO Exercises VALUES(115,'X2 Shoulders/Arms',8,'Six Direction Shoulder Fly',2)</statement>
+<statement>INSERT INTO Exercises VALUES(116,'X2 Shoulders/Arms',8,'Crazy Eight',2)</statement>
+<statement>INSERT INTO Exercises VALUES(117,'X2 Shoulders/Arms',8,'Y-T Fly',2)</statement>
+<statement>INSERT INTO Exercises VALUES(118,'X2 Shoulders/Arms',8,'Rocket Launcher Tricep Kickback',2)</statement>
+<statement>INSERT INTO Exercises VALUES(119,'X2 Shoulders/Arms',8,'Balance Curl',2)</statement>
+<statement>INSERT INTO Exercises VALUES(120,'X2 Shoulders/Arms',8,'Arnold Press',2)</statement>
+<statement>INSERT INTO Exercises VALUES(121,'X2 Shoulders/Arms',8,'Overhead Tricep Pull',2)</statement>
+<statement>INSERT INTO Exercises VALUES(122,'X2 Shoulders/Arms',8,'Six Direction Shoulder Fly',2)</statement>
+<statement>INSERT INTO Exercises VALUES(123,'X2 Shoulders/Arms',8,'Crazy Eight',2)</statement>
+<statement>INSERT INTO Exercises VALUES(124,'X2 Shoulders/Arms',8,'Y-T Fly',2)</statement>
+<statement>INSERT INTO Exercises VALUES(125,'X2 Shoulders/Arms',8,'Rocket Launcher Tricep Kickback',2)</statement>
+<statement>INSERT INTO Exercises VALUES(126,'X2 Shoulders/Arms',8,'Balance Curl',2)</statement>
+<statement>INSERT INTO Exercises VALUES(127,'X2 Shoulders/Arms',8,'Arnold Press',2)</statement>
+<statement>INSERT INTO Exercises VALUES(128,'X2 Shoulders/Arms',8,'Overhead Tricep Pull',2)</statement>
+<statement>INSERT INTO Exercises VALUES(129,'X2 Shoulders/Arms',8,'Six Direction Shoulder Fly',2)</statement>
+<statement>INSERT INTO Exercises VALUES(130,'X2 Shoulders/Arms',8,'Crazy Eight',2)</statement>
+<statement>INSERT INTO Exercises VALUES(131,'X2 Shoulders/Arms',8,'Y-T Fly',2)</statement>
+<statement>INSERT INTO Exercises VALUES(132,'X2 Shoulders/Arms',8,'Rocket Launcher Tricep Kickback',2)</statement>
+<statement>INSERT INTO Exercises VALUES(133,'Base/Back',9,'No Kip Pull-Up',4)</statement>
+<statement>INSERT INTO Exercises VALUES(134,'Base/Back',9,'Plyo Frog Squat',1)</statement>
+<statement>INSERT INTO Exercises VALUES(135,'Base/Back',9,'Wide Leg Close Grip Chin-Up',4)</statement>
+<statement>INSERT INTO Exercises VALUES(136,'Base/Back',9,'Chair Jump',1)</statement>
+<statement>INSERT INTO Exercises VALUES(137,'Base/Back',9,'Chin Pull',4)</statement>
+<statement>INSERT INTO Exercises VALUES(138,'Base/Back',9,'Plyo Lunge Press',2)</statement>
+<statement>INSERT INTO Exercises VALUES(139,'Base/Back',9,'V Pull-Up',4)</statement>
+<statement>INSERT INTO Exercises VALUES(140,'Base/Back',9,'Surfer Spin',1)</statement>
+<statement>INSERT INTO Exercises VALUES(141,'Base/Back',9,'Kippy Cross Fugly Pull',4)</statement>
+<statement>INSERT INTO Exercises VALUES(142,'Base/Back',9,'Jack in the Box Knee Tuck',1)</statement>
+<statement>INSERT INTO Exercises VALUES(143,'Base/Back',9,'No Kip Pull-Up',4)</statement>
+<statement>INSERT INTO Exercises VALUES(144,'Base/Back',9,'Plyo Frog Squat',1)</statement>
+<statement>INSERT INTO Exercises VALUES(145,'Base/Back',9,'Wide Leg Close Grip Chin-Up',4)</statement>
+<statement>INSERT INTO Exercises VALUES(146,'Base/Back',9,'Chair Jump',1)</statement>
+<statement>INSERT INTO Exercises VALUES(147,'Base/Back',9,'Chin Pull',4)</statement>
+<statement>INSERT INTO Exercises VALUES(148,'Base/Back',9,'Plyo Lunge Press',2)</statement>
+<statement>INSERT INTO Exercises VALUES(149,'Base/Back',9,'V Pull-Up',4)</statement>
+<statement>INSERT INTO Exercises VALUES(150,'Base/Back',9,'Surfer Spin',1)</statement>
+<statement>INSERT INTO Exercises VALUES(151,'Base/Back',9,'Kippy Cross Fugly Pull',4)</statement>
+<statement>INSERT INTO Exercises VALUES(152,'Base/Back',9,'Jack in the Box Knee Tuck',1)</statement>
+<statement>INSERT INTO Exercises VALUES(153,'V Sculpt',10,'Around the World Pull-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(154,'V Sculpt',10,'Alt Hammer Curl',2)</statement>
+<statement>INSERT INTO Exercises VALUES(155,'V Sculpt',10,'Med Ball Renegade Row',4)</statement>
+<statement>INSERT INTO Exercises VALUES(156,'V Sculpt',10,'Band Bicep Curl',2)</statement>
+<statement>INSERT INTO Exercises VALUES(157,'V Sculpt',10,'Pull-Up X',1)</statement>
+<statement>INSERT INTO Exercises VALUES(158,'V Sculpt',10,'Med Ball Renegade Curl',1)</statement>
+<statement>INSERT INTO Exercises VALUES(159,'V Sculpt',10,'Wide Leg Row Twist',4)</statement>
+<statement>INSERT INTO Exercises VALUES(160,'V Sculpt',10,'Balance Dumbbell Curl',2)</statement>
+<statement>INSERT INTO Exercises VALUES(161,'V Sculpt',10,'Switch Grip Pull-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(162,'V Sculpt',10,'Roman Band Curl',4)</statement>
+<statement>INSERT INTO Exercises VALUES(163,'V Sculpt',10,'21 Pull-Up Low',1)</statement>
+<statement>INSERT INTO Exercises VALUES(164,'V Sculpt',10,'21 Pull-Up Hight',1)</statement>
+<statement>INSERT INTO Exercises VALUES(165,'V Sculpt',10,'21 Pull-Up Full Range',1)</statement>
+<statement>INSERT INTO Exercises VALUES(166,'V Sculpt',10,'Entman?s Chin-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(167,'V Sculpt',10,'Ball Preacher',2)</statement>
+<statement>INSERT INTO Exercises VALUES(168,'V Sculpt',10,'Stability Ball Lawnmower',2)</statement>
+<statement>INSERT INTO Exercises VALUES(169,'V Sculpt',10,'Renegade Roman Curl',2)</statement>
+<statement>INSERT INTO Exercises VALUES(170,'V Sculpt',10,'Zip Kip Pull-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(171,'V Sculpt',10,'High-Rep Balance Curl',2)</statement>
+<statement>INSERT INTO Exercises VALUES(172,'V Sculpt',10,'Straight Arm Pullover',2)</statement>
+<statement>INSERT INTO Exercises VALUES(173,'V Sculpt',10,'Renegade Hammer Curl',2)</statement>
+<statement>INSERT INTO Exercises VALUES(174,'V Sculpt',10,'Zip Kip Chin-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(175,'V Sculpt',10,'Close Body Curl',2)</statement>
+<statement>INSERT INTO Exercises VALUES(176,'V Sculpt',10,'Cross Fugly Pull-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(177,'Chest/Shoulders/Tris',11,'Chattarocker Push-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(178,'Chest/Shoulders/Tris',11,'Strip Press 1',2)</statement>
+<statement>INSERT INTO Exercises VALUES(179,'Chest/Shoulders/Tris',11,'Strip Press 2',2)</statement>
+<statement>INSERT INTO Exercises VALUES(180,'Chest/Shoulders/Tris',11,'Strip Press 3',2)</statement>
+<statement>INSERT INTO Exercises VALUES(181,'Chest/Shoulders/Tris',11,'Tricep Extension on Stability Ball',2)</statement>
+<statement>INSERT INTO Exercises VALUES(182,'Chest/Shoulders/Tris',11,'3-Ball Extravaganza',1)</statement>
+<statement>INSERT INTO Exercises VALUES(183,'Chest/Shoulders/Tris',11,'Callahan Press',2)</statement>
+<statement>INSERT INTO Exercises VALUES(184,'Chest/Shoulders/Tris',11,'Iron Man Kickback',2)</statement>
+<statement>INSERT INTO Exercises VALUES(185,'Chest/Shoulders/Tris',11,'Push-Up Side Arm Balance',1)</statement>
+<statement>INSERT INTO Exercises VALUES(186,'Chest/Shoulders/Tris',11,'X2 Circle Fly',1)</statement>
+<statement>INSERT INTO Exercises VALUES(187,'Chest/Shoulders/Tris',11,'3-Ball Dip',1)</statement>
+<statement>INSERT INTO Exercises VALUES(188,'Chest/Shoulders/Tris',11,'Chattarocker Push-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(189,'Chest/Shoulders/Tris',11,'Strip Press 1',2)</statement>
+<statement>INSERT INTO Exercises VALUES(190,'Chest/Shoulders/Tris',11,'Strip Press 2',2)</statement>
+<statement>INSERT INTO Exercises VALUES(191,'Chest/Shoulders/Tris',11,'Strip Press 3',2)</statement>
+<statement>INSERT INTO Exercises VALUES(192,'Chest/Shoulders/Tris',11,'Tricep Extension on Stability Ball',2)</statement>
+<statement>INSERT INTO Exercises VALUES(193,'Chest/Shoulders/Tris',11,'3-Ball Extravaganza',1)</statement>
+<statement>INSERT INTO Exercises VALUES(194,'Chest/Shoulders/Tris',11,'Callahan Press',2)</statement>
+<statement>INSERT INTO Exercises VALUES(195,'Chest/Shoulders/Tris',11,'Iron Man Kickback',2)</statement>
+<statement>INSERT INTO Exercises VALUES(196,'Chest/Shoulders/Tris',11,'Push-Up Side Arm Balance',1)</statement>
+<statement>INSERT INTO Exercises VALUES(197,'Chest/Shoulders/Tris',11,'X2 Circle Fly',1)</statement>
+<statement>INSERT INTO Exercises VALUES(198,'Chest/Shoulders/Tris',11,'3-Ball Dip',1)</statement>
+<statement>INSERT INTO Phases VALUES(1,'Foundation','3 to 6',1,0)</statement>
+<statement>INSERT INTO Phases VALUES(2,'Rest',1,2,0)</statement>
+<statement>INSERT INTO Phases VALUES(3,'Strength','3 to 6',3,0)</statement>
+<statement>INSERT INTO Phases VALUES(4,'Rest',1,2,0)</statement>
+<statement>INSERT INTO Phases VALUES(5,'Performance','3 to 4',4,0)</statement>
+<statement>INSERT INTO Phases VALUES(6,'Rest',1,2,0)</statement>
+<statement>INSERT INTO Strength VALUES(1,'Strength Week 1','3 to 6',1,2,0)</statement>
+<statement>INSERT INTO Strength VALUES(2,'Strength Week 2','3 to 6',2,2,0)</statement>
+</sql>

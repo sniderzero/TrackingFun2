@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:background="@drawable/background"
+	    android:orientation="vertical"
+	     >
+
+		<LinearLayout
+		    android:id="@+id/llHeader"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:background="@drawable/blackbuttonpressed"
+		    android:orientation="horizontal" >
+
+			<TextView
+			    android:id="@+id/lblHeader"
+			    style="@style/header"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_gravity="center_vertical"
+			    android:gravity="center"
+			    android:text="Select Phase" />
+
+		</LinearLayout>
+
+		<ImageView
+		    android:id="@+id/imgSeperator"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:src="@drawable/hline" />
+
+		<LinearLayout
+		    android:id="@+id/llColumnNames"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal" >
+
+		    <TextView
+		        android:id="@+id/txtPhaseName"
+		        android:layout_width="0dip"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:text="Name"
+		        android:textAppearance="?android:attr/textAppearanceLarge"
+		        android:textColor="#000000" />
+
+		    <TextView
+		        android:id="@+id/txtNumWeeks"
+		        android:layout_width="0dip"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:text="Weeks"
+		        android:textAppearance="?android:attr/textAppearanceLarge"
+		        android:textColor="#000000" />
+
+		    <TextView
+		        android:id="@+id/txtCompletions"
+		        android:layout_width="0dip"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:text="Completions"
+		        android:textAppearance="?android:attr/textAppearanceLarge"
+		        android:textColor="#000000" />
+		</LinearLayout>
+
+		<ListView
+		    android:id="@+id/lstPhases"
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent"
+		    android:cacheColorHint="#00000000"
+		    android:divider="@drawable/hline"
+		    android:drawSelectorOnTop="false" >
+
+		</ListView>
+
+	</LinearLayout>

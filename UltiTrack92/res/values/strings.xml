@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="hello">Hello World, launch!</string>
+    <string name="app_name">UltiTrack 92</string>
+    
+    <string name="timer">00:00:00</string> 
+    <string name="timerMs">.0</string> 
+    <string name="startText">start</string> 
+    <string name="resetText">reset</string> 
+    <string name="stopText">stop</string> 
+
+    
+
+	<string-array name="band_values">
+		<item>None</item>
+		<item>Low</item>
+		<item>Medium</item>
+		<item>High</item>
+	</string-array>
+		<string-array name="assist_values">
+		<item>None</item>
+		<item>Bands</item>
+		<item>Chair</item>
+	</string-array>
+</resources>
