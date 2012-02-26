@@ -28,7 +28,7 @@ public class Exercises extends Activity{
 	int phaseID,hasRIP,dayID,dayID2, curPos, type,dayNum;
 	String dayName;
 	ListView lstExer;
-	Typeface font;
+	Typeface font, font2;
 	TextView lblHeader;
 	@Override
 	// on open 
