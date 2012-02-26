@@ -1,7 +1,5 @@
 package com.appsmarttech.ultitrack92;
 
-import java.util.Calendar;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -136,7 +134,7 @@ Typeface font;
 
         //creating some spinner adapters
         adapter_band = ArrayAdapter.createFromResource(
-        		this, R.array.band_values, android.R.layout.simple_spinner_item);
+        		this, R.array.Generic_Bands, android.R.layout.simple_spinner_item);
         adapter_band.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
         adapter_assist= ArrayAdapter.createFromResource(
         this, R.array.assist_values, android.R.layout.simple_spinner_item );
@@ -321,6 +319,9 @@ public void saveRecord(){
    break;
    case 4:
    showAssist();
+   break;
+   case 5:
+   showBand();
    break;
    }
 

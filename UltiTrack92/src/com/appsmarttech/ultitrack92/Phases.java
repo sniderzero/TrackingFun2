@@ -2,8 +2,10 @@ package com.appsmarttech.ultitrack92;
 
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -32,7 +34,7 @@ public class Phases extends Activity {
 	SQLiteDatabase db;
 	Cursor cursor;
 	ListAdapter adapter;
-	Integer phaseID;
+	Integer phaseID, strengthID;
 	ListView lstPhases;
 	SharedPreferences preferences;
 	TextView lblHeader;
@@ -65,14 +67,25 @@ public class Phases extends Activity {
 				phaseID = cursor.getInt(3);
 			if(phaseID == 3)
 				{
-					Intent intent = new Intent(Phases.this, UltiTrack92Activity.class);
-					//Cursor cursor2 = (Cursor) adapter.getItem(position);
-					intent.putExtra("PHASE_DAY", cursor.getInt(5));
-					intent.putExtra("HAS_RIPPER", cursor.getInt(6));
-					intent.putExtra("DAY_ID", cursor.getInt(1));
-					intent.putExtra("DAY_NAME", cursor.getString(0));
-					db.close();
-					startActivity(intent);
+	    		final CharSequence[] items = {"Strength Week 1","Strength Week 2"};
+
+	    		AlertDialog.Builder builder = new AlertDialog.Builder(Phases.this);
+	    		builder.setTitle("Which Strength Week?");
+	    		builder.setItems(items, new DialogInterface.OnClickListener() {
+	    		    public void onClick(DialogInterface dialog, int item) {
+	    				if(items[item] == "Strength Week 1"){
+	    					strengthID = 1;
+	    				}
+	    				else {
+	    					strengthID =2;
+	    				}
+	    		        Intent intent = new Intent(Phases.this, WorkoutDays.class);
+	    		        intent.putExtra("STRENGTH_ID", strengthID);
+	    		        intent.putExtra("PHASE_ID", phaseID);
+						startActivity(intent);
+	    		    }});
+	    		AlertDialog alert = builder.create();
+	    		alert.show();
 				}
 				else { 
 					Intent intent = new Intent(Phases.this, WorkoutDays.class);
@@ -121,7 +134,7 @@ public class Phases extends Activity {
 	    }  
 	  }  
 	
-	
+
 }
 
 

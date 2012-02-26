@@ -12,7 +12,11 @@
 
     
 
-	<string-array name="band_values">
+	<string-array name="band_type">
+		<item>Generic</item>
+		<item>X Bands</item>
+	</string-array>
+    <string-array name="Generic_Bands">
 		<item>None</item>
 		<item>Low</item>
 		<item>Medium</item>
@@ -22,5 +26,14 @@
 		<item>None</item>
 		<item>Bands</item>
 		<item>Chair</item>
+	</string-array>
+	<string-array name="X_Bands">
+		<item>None</item>
+		<item>Pink 15</item>
+		<item>Magenta 20</item>
+		<item>Red 30</item>
+		<item>Green 40</item>
+		<item>Blue 45</item>
+		<item>Black 50</item>
 	</string-array>
 </resources>

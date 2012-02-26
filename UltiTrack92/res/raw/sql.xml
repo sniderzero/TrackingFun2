@@ -119,7 +119,7 @@ CREATE TABLE IF NOT EXISTS Weighin (
 <statement>INSERT INTO Exercises VALUES(24,'X2 Core',1,'One Leg Med Ball Burpee',1)</statement>
 <statement>INSERT INTO Exercises VALUES(25,'X2 Total Body',4,'1-Arm Chest Press Right',2)</statement>
 <statement>INSERT INTO Exercises VALUES(26,'X2 Total Body',4,'1-Arm Chest Press Left',2)</statement>
-<statement>INSERT INTO Exercises VALUES(27,'X2 Total Body',4,'4-Position Pull-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(27,'X2 Total Body',4,'4-Position Pull-Up',4)</statement>
 <statement>INSERT INTO Exercises VALUES(28,'X2 Total Body',4,'Push-Up Side Arm Balance',1)</statement>
 <statement>INSERT INTO Exercises VALUES(29,'X2 Total Body',4,'Switch Lunge Press Right',2)</statement>
 <statement>INSERT INTO Exercises VALUES(30,'X2 Total Body',4,'Switch Lunge Press Left',2)</statement>
@@ -136,7 +136,7 @@ CREATE TABLE IF NOT EXISTS Weighin (
 <statement>INSERT INTO Exercises VALUES(41,'X2 Total Body',4,'Rocket Launcher Preacher Curl',2)</statement>
 <statement>INSERT INTO Exercises VALUES(42,'X2 Total Body',4,'1-Arm Chest Press Right',2)</statement>
 <statement>INSERT INTO Exercises VALUES(43,'X2 Total Body',4,'1-Arm Chest Press Left',2)</statement>
-<statement>INSERT INTO Exercises VALUES(44,'X2 Total Body',4,'4-Position Pull-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(44,'X2 Total Body',4,'4-Position Pull-Up',4)</statement>
 <statement>INSERT INTO Exercises VALUES(45,'X2 Total Body',4,'Push-Up Side Arm Balance',1)</statement>
 <statement>INSERT INTO Exercises VALUES(46,'X2 Total Body',4,'Switch Lunge Press Right',2)</statement>
 <statement>INSERT INTO Exercises VALUES(47,'X2 Total Body',4,'Switch Lunge Press Left',2)</statement>
@@ -145,9 +145,9 @@ CREATE TABLE IF NOT EXISTS Weighin (
 <statement>INSERT INTO Exercises VALUES(50,'X2 Total Body',4,'Warrior 3 Curl Right',2)</statement>
 <statement>INSERT INTO Exercises VALUES(51,'X2 Total Body',4,'Warrior 3 Curl Left',2)</statement>
 <statement>INSERT INTO Exercises VALUES(52,'X2 Total Body',4,'Boing Push-Up',1)</statement>
-<statement>INSERT INTO Exercises VALUES(53,'X2 Total Body',4,'Crunchy Lever Pull-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(53,'X2 Total Body',4,'Crunchy Lever Pull-Up',4)</statement>
 <statement>INSERT INTO Exercises VALUES(54,'X2 Total Body',4,'Mule Kick Burpee',1)</statement>
-<statement>INSERT INTO Exercises VALUES(55,'X2 Total Body',4,'Swimmer?s Curl Press in ? Chair',2)</statement>
+<statement>INSERT INTO Exercises VALUES(55,'X2 Total Body',4,'Swimmers Curl Press in Half Chair',2)</statement>
 <statement>INSERT INTO Exercises VALUES(56,'X2 Total Body',4,'Balance Kickback on Stability Ball Right',2)</statement>
 <statement>INSERT INTO Exercises VALUES(57,'X2 Total Body',4,'Balance Kickback on Stability Ball Left',2)</statement>
 <statement>INSERT INTO Exercises VALUES(58,'X2 Total Body',4,'Rocket Launcher Preacher Curl',2)</statement>
@@ -162,7 +162,7 @@ CREATE TABLE IF NOT EXISTS Weighin (
 <statement>INSERT INTO Exercises VALUES(67,'X2 Balance/Power',6,'Decline Sphinx Plank Press',1)</statement>
 <statement>INSERT INTO Exercises VALUES(68,'X2 Balance/Power',6,'Weighted Katherine',1)</statement>
 <statement>INSERT INTO Exercises VALUES(69,'X2 Balance/Power',6,'Plank X Crunch',1)</statement>
-<statement>INSERT INTO Exercises VALUES(70,'X2 Balance/Power',6,'Renegade Row ? Lolasana',2)</statement>
+<statement>INSERT INTO Exercises VALUES(70,'X2 Balance/Power',6,'Renegade Row Half Lolasana',2)</statement>
 <statement>INSERT INTO Exercises VALUES(71,'X2 Balance/Power',6,'Glute Bridge Roll Out',1)</statement>
 <statement>INSERT INTO Exercises VALUES(72,'X2 Balance/Power',6,'Over/Under Boat',1)</statement>
 <statement>INSERT INTO Exercises VALUES(73,'X2 Balance/Power',6,'Warrior Row Press Right',2)</statement>
@@ -184,17 +184,17 @@ CREATE TABLE IF NOT EXISTS Weighin (
 <statement>INSERT INTO Exercises VALUES(89,'Chest/Back/Balance',7,'Plyo Stability Ball Push-Up',1)</statement>
 <statement>INSERT INTO Exercises VALUES(90,'Chest/Back/Balance',7,'Core Crunch Chin-Up',4)</statement>
 <statement>INSERT INTO Exercises VALUES(91,'Chest/Back/Balance',7,'Push-Up Side Arm Balance',1)</statement>
-<statement>INSERT INTO Exercises VALUES(92,'Chest/Back/Balance',7,'Lever',1)</statement>
+<statement>INSERT INTO Exercises VALUES(92,'Chest/Back/Balance',7,'Lever',4)</statement>
 <statement>INSERT INTO Exercises VALUES(93,'Chest/Back/Balance',7,'4-Ball Push-Up',1)</statement>
 <statement>INSERT INTO Exercises VALUES(94,'Chest/Back/Balance',7,'Chin Pull Chin-Up',4)</statement>
 <statement>INSERT INTO Exercises VALUES(95,'Chest/Back/Balance',7,'Chin Pull Pull-Up',4)</statement>
 <statement>INSERT INTO Exercises VALUES(96,'Chest/Back/Balance',7,'The Impossible/Possible',1)</statement>
-<statement>INSERT INTO Exercises VALUES(97,'Chest/Back/Balance',7,'?L? Pull-Up',4)</statement>
+<statement>INSERT INTO Exercises VALUES(97,'Chest/Back/Balance',7,'L Pull-Up',4)</statement>
 <statement>INSERT INTO Exercises VALUES(98,'Chest/Back/Balance',7,'3-Ball Plyo Push-Up',1)</statement>
 <statement>INSERT INTO Exercises VALUES(99,'Chest/Back/Balance',7,'Vaulter Pull-Up',4)</statement>
 <statement>INSERT INTO Exercises VALUES(100,'Chest/Back/Balance',7,'Elevated Stability Ball Push-Up',1)</statement>
 <statement>INSERT INTO Exercises VALUES(101,'Chest/Back/Balance',7,'In and Out',4)</statement>
-<statement>INSERT INTO Exercises VALUES(102,'Chest/Back/Balance',7,'Swimmer?s Push-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(102,'Chest/Back/Balance',7,'Swimmers Push-Up',1)</statement>
 <statement>INSERT INTO Exercises VALUES(103,'Chest/Back/Balance',7,'4-Grip Pull-Up Wide',4)</statement>
 <statement>INSERT INTO Exercises VALUES(104,'Chest/Back/Balance',7,'4-Grip Pull-Up Palm to Palm',4)</statement>
 <statement>INSERT INTO Exercises VALUES(105,'Chest/Back/Balance',7,'4-Grip Pull-Up Overhand Close',4)</statement>
@@ -245,30 +245,30 @@ CREATE TABLE IF NOT EXISTS Weighin (
 <statement>INSERT INTO Exercises VALUES(150,'Base/Back',9,'Surfer Spin',1)</statement>
 <statement>INSERT INTO Exercises VALUES(151,'Base/Back',9,'Kippy Cross Fugly Pull',4)</statement>
 <statement>INSERT INTO Exercises VALUES(152,'Base/Back',9,'Jack in the Box Knee Tuck',1)</statement>
-<statement>INSERT INTO Exercises VALUES(153,'V Sculpt',10,'Around the World Pull-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(153,'V Sculpt',10,'Around the World Pull-Up',4)</statement>
 <statement>INSERT INTO Exercises VALUES(154,'V Sculpt',10,'Alt Hammer Curl',2)</statement>
-<statement>INSERT INTO Exercises VALUES(155,'V Sculpt',10,'Med Ball Renegade Row',4)</statement>
-<statement>INSERT INTO Exercises VALUES(156,'V Sculpt',10,'Band Bicep Curl',2)</statement>
-<statement>INSERT INTO Exercises VALUES(157,'V Sculpt',10,'Pull-Up X',1)</statement>
-<statement>INSERT INTO Exercises VALUES(158,'V Sculpt',10,'Med Ball Renegade Curl',1)</statement>
-<statement>INSERT INTO Exercises VALUES(159,'V Sculpt',10,'Wide Leg Row Twist',4)</statement>
+<statement>INSERT INTO Exercises VALUES(155,'V Sculpt',10,'Med Ball Renegade Row',2)</statement>
+<statement>INSERT INTO Exercises VALUES(156,'V Sculpt',10,'Band Bicep Curl',5)</statement>
+<statement>INSERT INTO Exercises VALUES(157,'V Sculpt',10,'Pull-Up X',4)</statement>
+<statement>INSERT INTO Exercises VALUES(158,'V Sculpt',10,'Med Ball Renegade Curl',2)</statement>
+<statement>INSERT INTO Exercises VALUES(159,'V Sculpt',10,'Wide Leg Row Twist',5)</statement>
 <statement>INSERT INTO Exercises VALUES(160,'V Sculpt',10,'Balance Dumbbell Curl',2)</statement>
-<statement>INSERT INTO Exercises VALUES(161,'V Sculpt',10,'Switch Grip Pull-Up',1)</statement>
-<statement>INSERT INTO Exercises VALUES(162,'V Sculpt',10,'Roman Band Curl',4)</statement>
-<statement>INSERT INTO Exercises VALUES(163,'V Sculpt',10,'21 Pull-Up Low',1)</statement>
-<statement>INSERT INTO Exercises VALUES(164,'V Sculpt',10,'21 Pull-Up Hight',1)</statement>
-<statement>INSERT INTO Exercises VALUES(165,'V Sculpt',10,'21 Pull-Up Full Range',1)</statement>
-<statement>INSERT INTO Exercises VALUES(166,'V Sculpt',10,'Entman?s Chin-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(161,'V Sculpt',10,'Switch Grip Pull-Up',4)</statement>
+<statement>INSERT INTO Exercises VALUES(162,'V Sculpt',10,'Roman Band Curl',5)</statement>
+<statement>INSERT INTO Exercises VALUES(163,'V Sculpt',10,'21 Pull-Up Low',4)</statement>
+<statement>INSERT INTO Exercises VALUES(164,'V Sculpt',10,'21 Pull-Up Hight',4)</statement>
+<statement>INSERT INTO Exercises VALUES(165,'V Sculpt',10,'21 Pull-Up Full Range',4)</statement>
+<statement>INSERT INTO Exercises VALUES(166,'V Sculpt',10,'Entmans Chin-Up',4)</statement>
 <statement>INSERT INTO Exercises VALUES(167,'V Sculpt',10,'Ball Preacher',2)</statement>
 <statement>INSERT INTO Exercises VALUES(168,'V Sculpt',10,'Stability Ball Lawnmower',2)</statement>
 <statement>INSERT INTO Exercises VALUES(169,'V Sculpt',10,'Renegade Roman Curl',2)</statement>
-<statement>INSERT INTO Exercises VALUES(170,'V Sculpt',10,'Zip Kip Pull-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(170,'V Sculpt',10,'Zip Kip Pull-Up',4)</statement>
 <statement>INSERT INTO Exercises VALUES(171,'V Sculpt',10,'High-Rep Balance Curl',2)</statement>
 <statement>INSERT INTO Exercises VALUES(172,'V Sculpt',10,'Straight Arm Pullover',2)</statement>
 <statement>INSERT INTO Exercises VALUES(173,'V Sculpt',10,'Renegade Hammer Curl',2)</statement>
-<statement>INSERT INTO Exercises VALUES(174,'V Sculpt',10,'Zip Kip Chin-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(174,'V Sculpt',10,'Zip Kip Chin-Up',4)</statement>
 <statement>INSERT INTO Exercises VALUES(175,'V Sculpt',10,'Close Body Curl',2)</statement>
-<statement>INSERT INTO Exercises VALUES(176,'V Sculpt',10,'Cross Fugly Pull-Up',1)</statement>
+<statement>INSERT INTO Exercises VALUES(176,'V Sculpt',10,'Cross Fugly Pull-Up',4)</statement>
 <statement>INSERT INTO Exercises VALUES(177,'Chest/Shoulders/Tris',11,'Chattarocker Push-Up',1)</statement>
 <statement>INSERT INTO Exercises VALUES(178,'Chest/Shoulders/Tris',11,'Strip Press 1',2)</statement>
 <statement>INSERT INTO Exercises VALUES(179,'Chest/Shoulders/Tris',11,'Strip Press 2',2)</statement>

@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
   
-  <EditTextPreference android:title="Your Name"
+<EditTextPreference android:title="Your Name"
                       android:key="username"
                       android:summary="Please provide your username"/>
-  
+
+<EditTextPreference android:title="Number of Runs"
+                      android:key="runnumber"
+                      android:summary="Tracks the number of times the app has ran"
+                      android:defaultValue=""/>
+
 <CheckBoxPreference android:title="First Run"
                       android:key= "firstrun"
                       android:summary="Tracks the first run state of the app"/>
-    
-  <ListPreference     android:title="Current Track"
-                      android:summary="Which Track are you current on?"
-                      android:key="trackType"
-                      android:entries="@array/listTrack"
-                      android:entryValues="@array/listTrack" />
-  <ListPreference     android:title="Equipment Type"
+
+<CheckBoxPreference android:title="Provided Feedback"
+                      android:key= "feedbackgiven"
+                      android:summary="Tracks if feedback was provided"/>
+
+<ListPreference     android:title="Equipment Type"
                       android:summary="Are you using weights or bands?"
                       android:key="equipmentType"
                       android:defaultValue=""

@@ -27,7 +27,7 @@ public class WorkoutDays extends Activity {
 	SQLiteDatabase db;
 	Cursor cursor;
 	ListAdapter adapter;
-	int phaseID, Type;
+	int phaseID, strengthID, Type;
 	ListView lstDays;
 	TextView lblHeader;
 	Typeface font;
@@ -46,11 +46,13 @@ public class WorkoutDays extends Activity {
         lblHeader.setTypeface(font);
     	//open db
         db = (new DBHelper(this)).getWritableDatabase();
-        //grab phaseID from previous selection
+        //grab phaseID and strenghtID from previous selection
         phaseID = getIntent().getIntExtra("PHASE_ID", 1);
-    	// query db based on phaseID
-    	cursor = db.rawQuery("SELECT _id, DayNum, DayName, DayID, PhaseID, StrengthID, Type, HasRipper, LastDate, Completions " +
-    			"FROM Days WHERE PhaseID ="  + phaseID , null);
+        strengthID = getIntent().getIntExtra("STRENGTH_ID", 1);
+    	// query db
+        
+        whichDays();
+
 		lstDays.setAdapter(new adapter(this,cursor));
 
 		
@@ -122,6 +124,14 @@ public class WorkoutDays extends Activity {
 	    }  
 	  }  
 	
-	
+	public void whichDays(){
+		if(phaseID == 3){
+	    	cursor = db.rawQuery("SELECT _id, DayNum, DayName, DayID, PhaseID, StrengthID, Type, HasRipper, LastDate, Completions " +
+	    			"FROM Days WHERE StrengthID ="  + strengthID , null);
+		}
+		else
+	    	cursor = db.rawQuery("SELECT _id, DayNum, DayName, DayID, PhaseID, StrengthID, Type, HasRipper, LastDate, Completions " +
+	    			"FROM Days WHERE PhaseID ="  + phaseID , null);
+	}
 }
 	

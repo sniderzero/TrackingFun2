@@ -93,6 +93,9 @@ public class History extends Activity{
 		case 4:
 			showAssist();
 			break;
+		case 5:
+			showBand();
+			break;
 		}
 	}
 	
@@ -169,6 +172,14 @@ public class History extends Activity{
 			((TextView)view.findViewById(R.id.txtWeight)).setVisibility(View.GONE);
 			((TextView)view.findViewById(R.id.txtBand)).setVisibility(View.VISIBLE);
 			((TextView)view.findViewById(R.id.txtAssist)).setVisibility(View.VISIBLE); 
+	      break;
+	      
+	      case 5:
+	  			((TextView)view.findViewById(R.id.txtTime)).setVisibility(View.GONE);
+				((TextView)view.findViewById(R.id.txtReps)).setVisibility(View.VISIBLE);
+				((TextView)view.findViewById(R.id.txtWeight)).setVisibility(View.INVISIBLE);
+				((TextView)view.findViewById(R.id.txtBand)).setVisibility(View.VISIBLE);
+				((TextView)view.findViewById(R.id.txtAssist)).setVisibility(View.GONE);
 	      break;
 	      }
 	      }
