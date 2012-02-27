@@ -6,9 +6,6 @@
 	    android:orientation="vertical"
 	     >
 
-
-
-
 		<LinearLayout
 		    android:id="@+id/llHeader"
 		    android:layout_width="fill_parent"
@@ -16,18 +13,39 @@
 		    android:background="@drawable/blackbuttonpressed"
 		    android:orientation="horizontal" >
 
-
-			<TextView
-			    android:id="@+id/lblHeader"
-			    style="@style/header"
-			    android:layout_width="fill_parent"
-			    android:layout_height="wrap_content"
-			    android:layout_gravity="center_vertical"
-			    android:gravity="center"
-			    android:text="Select Workout" />
-
+		    <TextView
+		        android:id="@+id/lblHeader"
+		        style="@style/header"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center_vertical"
+		        android:gravity="center"
+		        android:text="Select Workout" />
 		</LinearLayout>
+
+		<LinearLayout
+		    android:id="@+id/llColumnNames"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal" >
 
+		    <TextView
+		        android:id="@+id/txtPhaseName"
+		        style="@style/lbltext"
+		        android:layout_width="0dip"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1.30"
+		        android:text="Name" />
+
+		    <TextView
+		        android:id="@+id/txtCompletions"
+		        style="@style/lbltext"
+		        android:layout_width="0dip"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:gravity="center"
+		        android:text="Completes" />
+		</LinearLayout>
 
 		<ImageView
 		    android:id="@+id/imgDivider"
