@@ -27,5 +27,15 @@
         <style name="textcolor">
         <item name="android:textColor">#030202</item>
 	</style>
+        <style name="rowtext">
+           <item name="android:textSize">23dip</item>
+           <item name = "android:textColor"> #000000</item>
+           <item name = "android:paddingTop">5dip</item>
+           <item name = "android:paddingBottom">5dip</item>
+        </style>
+                <style name="lbltext">
+           <item name="android:textSize">23dip</item>
+           <item name = "android:textColor"> #000000</item>
+        </style>
     
 </resources>

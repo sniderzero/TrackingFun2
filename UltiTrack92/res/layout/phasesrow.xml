@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="wrap_content"
     android:orientation="horizontal" >
-
+
     <TextView
         android:id="@+id/txtPhaseName"
+        style="@style/rowtext"
         android:layout_width="0dip"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Balls"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#000000" />
-
+        android:layout_weight="1.30"
+        android:text="Performance" />
+
     <TextView
         android:id="@+id/txtNumWeeks"
+        style="@style/rowtext"
         android:layout_width="0dip"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Large Text"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#000000" />
-
+        android:layout_weight="0.68"
+        android:gravity="center"
+        android:text="3 to 6" />
+
     <TextView
         android:id="@+id/txtCompletions"
         android:layout_width="0dip"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Balls"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#000000" />
+        android:gravity="center"
+        android:text="0"
+        style="@style/rowtext" />
 
 </LinearLayout>

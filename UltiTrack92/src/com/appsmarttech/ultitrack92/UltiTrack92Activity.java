@@ -124,11 +124,7 @@ public class UltiTrack92Activity extends Activity {
         dialog.setTitle("Set Your Preferences");
         dialog.setCancelable(true);
         //set up spinners
-        ArrayAdapter<CharSequence> adapter_track = ArrayAdapter.createFromResource(
-        this, R.array.listTrack, android.R.layout.simple_spinner_item);
-        adapter_track.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item);
-
-        
+      
         ArrayAdapter<CharSequence> adapter_equip = ArrayAdapter.createFromResource(
         this, R.array.listEquip, android.R.layout.simple_spinner_item );
         adapter_equip.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );

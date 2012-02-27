@@ -68,6 +68,9 @@ Typeface font;
         phaseID = getIntent().getIntExtra("PHASE_ID",1); //PhaseID for updating Phase completions
         dayName = getIntent().getStringExtra("DAY_NAME"); //dayName for share dialog
         dayNum = getIntent().getIntExtra("DAY_NUM",1); //for determining if the phase is finished
+        //grabbing the band/weight preference
+        preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        equipPref = preferences.getString("equipmentType", "");
         //building widgets
         txtName = (TextView) findViewById(R.id.txtName);
         txtRepsValue = (TextView) findViewById(R.id.txtRepsValue);
@@ -131,11 +134,19 @@ Typeface font;
                   
         //building home intent
         intentHome = new Intent(this, UltiTrack92Activity.class);
-
+        if(equipPref.equals("Generic Bands")) { 
         //creating some spinner adapters
         adapter_band = ArrayAdapter.createFromResource(
         		this, R.array.Generic_Bands, android.R.layout.simple_spinner_item);
+        }
+        else {
+            adapter_band = ArrayAdapter.createFromResource(
+            		this, R.array.X_Bands, android.R.layout.simple_spinner_item);
+        }
+        
         adapter_band.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
+        
+        
         adapter_assist= ArrayAdapter.createFromResource(
         this, R.array.assist_values, android.R.layout.simple_spinner_item );
         adapter_assist.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
@@ -177,11 +188,7 @@ Typeface font;
      
      // filling out user stats     
      fillUserStats();
-     
-     //grabbing the band/weight preference
-     preferences = PreferenceManager.getDefaultSharedPreferences(this);
-     equipPref = preferences.getString("equipmentType", "");
-     
+          
      //calling function to set what is visible
      showWhat();
      viewRefresh();
@@ -485,7 +492,7 @@ public void showStopButton(){
 
 //checking the user's equip preferences to show weights or bands
 public void weightsOrBands(){
-	if(equipPref.equals("Bands")){
+	if(equipPref.equals("Generic Bands")  || equipPref.equals("X Bands")){
 		showBand();
 	}
 	else {
