@@ -29,7 +29,7 @@ public class UltiTrack92Activity extends Activity {
 	SQLiteDatabase db;
 	SharedPreferences preferences;
 	String strTrack,strEquip, strRuns;
-	Spinner spnTrack,spnEquip;
+	Spinner spnEquip;
 	Integer intRuns;
 	Editor edit;
 	Boolean bnFeedback;
@@ -127,8 +127,7 @@ public class UltiTrack92Activity extends Activity {
         ArrayAdapter<CharSequence> adapter_track = ArrayAdapter.createFromResource(
         this, R.array.listTrack, android.R.layout.simple_spinner_item);
         adapter_track.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item);
-        spnTrack = (Spinner) dialog.findViewById(R.id.spnTrack);
-        spnTrack.setAdapter(adapter_track);
+
         
         ArrayAdapter<CharSequence> adapter_equip = ArrayAdapter.createFromResource(
         this, R.array.listEquip, android.R.layout.simple_spinner_item );
@@ -140,7 +139,6 @@ public class UltiTrack92Activity extends Activity {
         button.setOnClickListener(new OnClickListener() {
         @Override
             public void onClick(View v) {
-        	strTrack = spnTrack.getItemAtPosition((int) spnTrack.getSelectedItemId()).toString();
         	strEquip = spnEquip.getItemAtPosition((int) spnEquip.getSelectedItemId()).toString();
         	//saving preferences to the preference file
         	edit.putString("trackType", strTrack);
