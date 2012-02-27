@@ -3,40 +3,42 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-
+
     <TextView
         android:id="@+id/txtEquipment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:paddingBottom="5dp"
         android:text="We have noticed that you are using our P90X2 tracker a lot!  We think that is GREAT!  Will you help make us even better by rating our app?"
         android:textAppearance="?android:attr/textAppearanceMedium" />
-
+
     <LinearLayout
-        android:id="@+id/linearLayout1"
+        android:id="@+id/llButtons"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
 
         <Button
             android:id="@+id/btnNothanks"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="No Thanks" />
 
         <Button
             android:id="@+id/btnLater"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Ask Later" />
 
         <Button
             android:id="@+id/btnYes"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Sure Will"/>
+            android:text="Sure Will" />
     </LinearLayout>
 
 </LinearLayout>

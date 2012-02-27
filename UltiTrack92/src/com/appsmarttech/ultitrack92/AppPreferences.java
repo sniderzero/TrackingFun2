@@ -15,9 +15,9 @@ public class AppPreferences extends PreferenceActivity {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.preferences);
         
-        Preference somePreference = findPreference("firstrun");
+        Preference prefFirstrun = findPreference("firstrun");
         PreferenceScreen preferenceScreen = getPreferenceScreen();
-        preferenceScreen.removePreference(somePreference);
+        preferenceScreen.removePreference(prefFirstrun);
     }
  
 }
