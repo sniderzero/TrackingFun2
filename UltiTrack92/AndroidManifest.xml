@@ -11,20 +11,20 @@
         android:label="@string/app_name" android:theme="@android:style/Theme.Black.NoTitleBar">
         <activity
             android:name=".UltiTrack92Activity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="Phases"></activity>
-        <activity android:name="WorkoutDays"></activity>
-        <activity android:name="TimedWorkout"></activity>
-        <activity android:name="History"></activity>
-        <activity android:name="AppPreferences"></activity>
-        <activity android:name="Exercises"></activity>
-        <activity android:name="Details"></activity>
+        <activity android:name="Phases" android:screenOrientation="portrait"></activity>
+        <activity android:name="WorkoutDays" android:screenOrientation="portrait"></activity>
+        <activity android:name="TimedWorkout" android:screenOrientation="portrait"></activity>
+        <activity android:name="History" android:screenOrientation="portrait"></activity>
+        <activity android:name="AppPreferences" android:screenOrientation="portrait"></activity>
+        <activity android:name="Exercises" android:screenOrientation="portrait"></activity>
+        <activity android:name="Details" android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
