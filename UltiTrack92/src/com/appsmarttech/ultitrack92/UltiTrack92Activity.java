@@ -156,7 +156,7 @@ public class UltiTrack92Activity extends Activity {
 
     public void rateApp(){
     	Intent intent = new Intent(Intent.ACTION_VIEW);
-    	intent.setData(Uri.parse("market://details?id=com.fidotechnologies.ultitrack92"));
+    	intent.setData(Uri.parse("market://details?id=com.appsmarttech.ultitrack92"));
     	startActivity(intent);
     }
     

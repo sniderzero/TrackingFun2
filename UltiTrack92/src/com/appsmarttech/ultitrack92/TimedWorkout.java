@@ -238,7 +238,7 @@ public class TimedWorkout extends Activity{
 				public void onClick(DialogInterface dialog, int which) {
 					Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
 					sharingIntent.setType("text/plain");
-					String URL = "http://market.android.com/details?id=com.fidotechnologies.ultitrack92";
+					String URL = "http://market.android.com/details?id=com.appsmarttech.ultitrack92";
 					String shareBody = "I just completed " + dayID + " of the P90X, and I tracked it using UltiTrack! get it here " + URL;
 					sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "I am Awesome!!!");
 					sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
