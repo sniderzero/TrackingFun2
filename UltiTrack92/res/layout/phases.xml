@@ -23,12 +23,12 @@
 			    android:text="Select Phase" />
 
 		</LinearLayout>
-
+
 		<ImageView
 		    android:id="@+id/imgSeperator"
 		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
-		    android:src="@drawable/hline" />
+		    android:src="@drawable/bline" />
 
 		<LinearLayout
 		    android:id="@+id/llColumnNames"

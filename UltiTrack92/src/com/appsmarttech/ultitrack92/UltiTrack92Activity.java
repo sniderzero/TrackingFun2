@@ -113,6 +113,7 @@ public class UltiTrack92Activity extends Activity {
         	startActivity(in);
     	}
     	else {
+    		db.close();
     		preferenceSelect();
     	}
     }
@@ -155,7 +156,7 @@ public class UltiTrack92Activity extends Activity {
 
     public void rateApp(){
     	Intent intent = new Intent(Intent.ACTION_VIEW);
-    	intent.setData(Uri.parse("market://details?id=com.fidotechnologies.ultitrack90"));
+    	intent.setData(Uri.parse("market://details?id=com.fidotechnologies.ultitrack92"));
     	startActivity(intent);
     }
     

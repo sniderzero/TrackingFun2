@@ -14,6 +14,9 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
@@ -82,6 +85,7 @@ public class Phases extends Activity {
 	    		        Intent intent = new Intent(Phases.this, WorkoutDays.class);
 	    		        intent.putExtra("STRENGTH_ID", strengthID);
 	    		        intent.putExtra("PHASE_ID", phaseID);
+	    		        db.close();
 						startActivity(intent);
 	    		    }});
 	    		AlertDialog alert = builder.create();
@@ -134,7 +138,31 @@ public class Phases extends Activity {
 	    }  
 	  }  
 	
+	//create options menu
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.options, menu);
+        return true;
+      }
+//what to do when options menu is clicked
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        case R.id.preferences:
+            Intent in = new Intent(Phases.this, AppPreferences.class);
+            startActivity(in);
+              return true;
+        default:
+              return super.onOptionsItemSelected(item);
+        }
 
+    }
+
+    @Override
+    public void onBackPressed() {
+    	   db.close();
+    	   finish();
+    	}
+    
 }
 
 

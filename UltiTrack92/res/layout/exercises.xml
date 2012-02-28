@@ -27,16 +27,12 @@
 			    android:text="Select Exercise" />
 
 		</LinearLayout>
-
-
+
 		<ImageView
 		    android:id="@+id/imgDivider"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
-		    android:src="@drawable/hline" />
-
-
-
+		    android:src="@drawable/bline" />
 
 		<ListView
 		    android:id="@+id/lstExercises"

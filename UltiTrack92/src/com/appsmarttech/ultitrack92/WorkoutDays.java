@@ -12,6 +12,9 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -133,5 +136,31 @@ public class WorkoutDays extends Activity {
 	    	cursor = db.rawQuery("SELECT _id, DayNum, DayName, DayID, PhaseID, StrengthID, Type, HasRipper, LastDate, Completions " +
 	    			"FROM Days WHERE PhaseID ="  + phaseID , null);
 	}
+
+	//create options menu
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.options, menu);
+        return true;
+      }
+//what to do when options menu is clicked
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        case R.id.preferences:
+            Intent in = new Intent(WorkoutDays.this, AppPreferences.class);
+            startActivity(in);
+              return true;
+        default:
+              return super.onOptionsItemSelected(item);
+        }
+
+    }
+
+    @Override
+    public void onBackPressed() {
+    	   db.close();
+    	   finish();
+    	}
+    
 }
 	

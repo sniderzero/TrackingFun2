@@ -135,7 +135,7 @@ public class TimedWorkout extends Activity{
     public void saveAction (){
 	  	if(dayNum ==7){
 	  		intPhaseCompletes = intPhaseCompletes +1;
-	  		db.execSQL("UPDATE Phases SET Completions= "+ intCompletes + " WHERE PhaseID = " + "'" + phaseID + "'");
+	  		db.execSQL("UPDATE Phases SET Completions= "+ intPhaseCompletes + " WHERE PhaseID = " + "'" + phaseID + "'");
 	  	}
     	content = timerTextView.getText().toString();
     	strDate = functions.getDate();
@@ -238,7 +238,7 @@ public class TimedWorkout extends Activity{
 				public void onClick(DialogInterface dialog, int which) {
 					Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
 					sharingIntent.setType("text/plain");
-					String URL = "http://market.android.com/details?id=com.fidotechnologies.ultitrack90";
+					String URL = "http://market.android.com/details?id=com.fidotechnologies.ultitrack92";
 					String shareBody = "I just completed " + dayID + " of the P90X, and I tracked it using UltiTrack! get it here " + URL;
 					sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "I am Awesome!!!");
 					sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
@@ -279,5 +279,11 @@ public void showStopButton(){ //shows stop button, hides start/reset buttons
 	((Button)findViewById(R.id.startButton)).setVisibility(View.GONE);
 	((Button)findViewById(R.id.resetButton)).setVisibility(View.GONE);
 }
+
+@Override
+public void onBackPressed() {
+	   db.close();
+	   finish();
+	}
 
 }

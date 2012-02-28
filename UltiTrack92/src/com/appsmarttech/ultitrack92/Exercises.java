@@ -82,6 +82,7 @@ public class Exercises extends Activity{
 								intent.putExtra("DAY_NAME", dayName);
 								intent.putExtra("PHASE_ID", phaseID);
 								intent.putExtra("DAY_NUM", dayNum);
+								db.close();
 								startActivity(intent);
 						}
 							
@@ -93,7 +94,7 @@ public void nohasRipper(){
 }
 public void hasRipper(){
 	cursor = db.rawQuery("SELECT _id, DayID, ExerName, type " +
-			"FROM Exercises WHERE DayID =" + "'" + dayID +"'", null);
+			"FROM Exercises WHERE DayID =" + "'" + dayID +"'" + " or DayID = 15", null);
 }
 
 public class adapter extends CursorAdapter{  
@@ -140,5 +141,11 @@ public boolean onOptionsItemSelected(MenuItem item) {
     }
 
 }
+
+@Override
+public void onBackPressed() {
+	   db.close();
+	   finish();
+	}
 
 }
