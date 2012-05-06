@@ -18,7 +18,7 @@ public class DBHelper extends SQLiteOpenHelper {
 	protected Context context;
 	
 	public DBHelper(Context context) {
-		super(context, DATABASE_NAME, null, 1);
+		super(context, DATABASE_NAME, null, 2);
 		this.context = context;
 	}
 	//building DB based on sql.xml file in res/raw folder
@@ -42,9 +42,11 @@ public class DBHelper extends SQLiteOpenHelper {
 	// on upgrade - deleting existing tables and rebuilding - I need to look more into this are of SQLLITE
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		db.execSQL("DROP TABLE IF EXISTS employees");
-		onCreate(db);
-	}
+		db.execSQL("UPDATE Exercises SET ExerName= 'Tonys Triangle' WHERE _id = 245");
+		db.execSQL("UPDATE Exercises SET ExerName= 'Tonys Triangle' WHERE _id = 233");
+		db.execSQL("UPDATE Exercises SET ExerName= 'Tonys Triangle' WHERE _id = 237");
+		db.execSQL("UPDATE Exercises SET ExerName= 'Tonys Triangle' WHERE _id = 241");
+		}
 	
 	
 }

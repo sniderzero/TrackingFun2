@@ -5,6 +5,7 @@ package com.appsmarttech.ultitrack92;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -28,11 +29,11 @@ public class UltiTrack92Activity extends Activity {
 	//declarations
 	SQLiteDatabase db;
 	SharedPreferences preferences;
-	String strTrack,strEquip, strRuns;
+	String strTrack,strEquip, strRuns, url;
 	Spinner spnEquip;
 	Integer intRuns;
 	Editor edit;
-	Boolean bnFeedback;
+	Boolean bnFeedback, bnURLTest;
 	
     /** Called when the activity is first created. */
     @Override
@@ -158,6 +159,27 @@ public class UltiTrack92Activity extends Activity {
     	Intent intent = new Intent(Intent.ACTION_VIEW);
     	intent.setData(Uri.parse("market://details?id=com.appsmarttech.ultitrack92"));
     	startActivity(intent);
+    }
+    
+  //function for checking if intent is available
+    public static boolean isUriAvailable(Context context, String uri) {
+        Intent test = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+        return context.getPackageManager().resolveActivity(test, 0) != null;
+    }
+
+
+    public void facebookLike(View v){
+    	bnURLTest = isUriAvailable(this, "fb://profile/346670485368866/wall");
+    	
+    	if(bnURLTest = true) {
+    	url = "fb://profile/346670485368866/wall";
+    	}
+    	else{
+    	url = "http://www.facebook.com/appsmarttech";
+    	}
+    	Intent i = new Intent(Intent.ACTION_VIEW);  
+    	i.setData(Uri.parse(url));  
+    	startActivity(i);
     }
     
 //create options menu

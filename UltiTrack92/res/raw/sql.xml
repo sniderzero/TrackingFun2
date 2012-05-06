@@ -325,19 +325,19 @@ CREATE TABLE IF NOT EXISTS Weighin (
 <statement>INSERT INTO Exercises VALUES(230,'PAP Lower',12,'Step-Up Convict',1)</statement>
 <statement>INSERT INTO Exercises VALUES(231,'PAP Lower',12,'Skater Plyo',1)</statement>
 <statement>INSERT INTO Exercises VALUES(232,'PAP Lower',12,'One Leg Line Hop',1)</statement>
-<statement>INSERT INTO Exercises VALUES(233,'PAP Lower',12,'Tony''s Triangle',1)</statement>
+<statement>INSERT INTO Exercises VALUES(233,'PAP Lower',12,'Tonys Triangle',1)</statement>
 <statement>INSERT INTO Exercises VALUES(234,'PAP Lower',12,'Step-Up Convict',1)</statement>
 <statement>INSERT INTO Exercises VALUES(235,'PAP Lower',12,'Skater Plyo',1)</statement>
 <statement>INSERT INTO Exercises VALUES(236,'PAP Lower',12,'One Leg Line Hop',1)</statement>
-<statement>INSERT INTO Exercises VALUES(237,'PAP Lower',12,'Tony''s Triangle',1)</statement>
+<statement>INSERT INTO Exercises VALUES(237,'PAP Lower',12,'Tonys Triangle',1)</statement>
 <statement>INSERT INTO Exercises VALUES(238,'PAP Lower',12,'Step-Up Convict',1)</statement>
 <statement>INSERT INTO Exercises VALUES(239,'PAP Lower',12,'Skater Plyo',1)</statement>
 <statement>INSERT INTO Exercises VALUES(240,'PAP Lower',12,'One Leg Line Hop',1)</statement>
-<statement>INSERT INTO Exercises VALUES(241,'PAP Lower',12,'Tony''s Triangle',1)</statement>
+<statement>INSERT INTO Exercises VALUES(241,'PAP Lower',12,'Tonys Triangle',1)</statement>
 <statement>INSERT INTO Exercises VALUES(242,'PAP Lower',12,'Step-Up Convict',1)</statement>
 <statement>INSERT INTO Exercises VALUES(243,'PAP Lower',12,'Skater Plyo',1)</statement>
 <statement>INSERT INTO Exercises VALUES(244,'PAP Lower',12,'One Leg Line Hop',1)</statement>
-<statement>INSERT INTO Exercises VALUES(245,'PAP Lower',12,'Tony''s Triangle',1)</statement>
+<statement>INSERT INTO Exercises VALUES(245,'PAP Lower',12,'Tonys Triangle',1)</statement>
 <statement>INSERT INTO Exercises VALUES(246,'PAP Lower',12,'Squat Cross Reach',1)</statement>
 <statement>INSERT INTO Exercises VALUES(247,'PAP Lower',12,'Split Squat Jump',1)</statement>
 <statement>INSERT INTO Exercises VALUES(248,'PAP Lower',12,'Monster Slalom',1)</statement>
